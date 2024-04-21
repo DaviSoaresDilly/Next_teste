@@ -1,12 +1,15 @@
 import "./globals.css";
 
-import Header from "./components/core/header"
+import NavBar from "./components/core/navbar"
 
 export default function Home() {
   return (
     <div className="App">
-      <Header />
-
+      <NavBar
+        a = "Codigos de Carreira"
+        href = "#codigosdecarreira"
+      />
+      
     </div>
   );
 }

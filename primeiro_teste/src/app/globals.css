@@ -37,11 +37,6 @@ body,input {
   padding: 0 32px
 }
 
-.header__logo {
-  width: 165px;
-  margin: 25px
-}
-
 .navbar {
   overflow: hidden;
   background: var(--color-black);
