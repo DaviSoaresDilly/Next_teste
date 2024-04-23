@@ -1,13 +1,15 @@
+import Link from "next/link";
+
 interface NavBarProps {
-  a: string;
+  navbarTitulo: string;
   href: string;
 }
 
-export default function NavBar(props: NavBarProps) {
+export default function NavBar({navbarTitulo, href}: NavBarProps) {
   return (
     <div id="navbar" className="navbar">
       
-      <a className="navbar__option" href={props.href}>{props.a}</a>
+      <Link className="navbar__option" href={href}>{navbarTitulo}</Link>
       <a className="navbar__option" href="#donate">Apoie</a>
       <a className="navbar__option" href="#hosts">Hosts</a>
       <a className="navbar__option" href="#footer">Contato</a>

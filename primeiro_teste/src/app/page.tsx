@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="App">
       <NavBar
-        a = "Codigos de Carreira"
+        navbarTitulo = "Codigos de Carreira"
         href = "#codigosdecarreira"
       />
       
