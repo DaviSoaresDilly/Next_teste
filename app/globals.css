@@ -127,3 +127,19 @@ body,input {
   font-size: 17px;
   margin-top: 30px
 }
+
+.music-service {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 16px 16px 0 0
+}
+
+.music-service__link {
+  margin-right: 30px
+}
+
+.music-service__link:hover {
+  opacity: .5;
+  cursor: pointer
+}

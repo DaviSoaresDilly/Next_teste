@@ -6,6 +6,8 @@ interface LinkProps {
   href: string;
   src?: string;
   alt: string;
+  title?: string;
+  target?: string;
   children: React.ReactNode;
   className?: string;
 }
