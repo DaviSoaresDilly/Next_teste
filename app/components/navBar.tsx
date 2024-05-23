@@ -1,25 +1,12 @@
-import Link, { LinkProps } from "next/link";
 import React from "react";
+import ComponenteLink from "../core/link";
 
-interface NavBarProps {
-    navItems: LinkProps[]; // Array de itens da barra de navegação
-    navbarTitulo?: string; // Título da barra de navegação
-    className?: string; // Classe CSS personalizada para a barra de navegação
+export default function NavBar() {
+  return (
+    <nav id="navbar" className="navbar">
+      <ComponenteLink href="/" className="navbar__option" alt={"ir para pagina inicial"}>Home</ComponenteLink>
+      <ComponenteLink href="/sobre" className="navbar__option" alt={"ir para pagina sobre"}>Sobre</ComponenteLink>
+      <ComponenteLink href="/contato" className="navbar__option" alt={"ir para a pagina contato"}>Contato</ComponenteLink>
+    </nav>
+  );
 }
-
-const NavBar: React.FC<NavBarProps> = ({ navItems, navbarTitulo, className }) => {
-    return (
-        <nav className={className || "navbar"}>
-            {navbarTitulo && <h1 className= "navbar__titulo">{navbarTitulo}</h1>}
-            <ul>
-                {navItems.map((item, index) => (
-                    <li key={index}>
-                        <Link {...item} />
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    );
-}
-
-export default NavBar;

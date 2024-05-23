@@ -1,19 +1,17 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 interface LinkProps {
-    href: string;
-    label: string;
-    className?: string;
+  href: string;
+  src?: string;
+  alt: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
-/* componente funcional */
-const myLink: React.FC<LinkProps> = ({ href, label, className }) => {
-    return (
-        <Link href={href}>
-            <a className={className || "link"}>{label}</a>
-        </Link>
-    );
-} 
-
-export default myLink;
+export default function LinkComponent({ href, children, className, src, alt }: LinkProps) {
+  return (
+    <Link href={href} className={className}>{src && <Image src={src} alt={alt}/>}{children}</Link>
+  );
+}
