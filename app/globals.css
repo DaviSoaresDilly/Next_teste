@@ -143,3 +143,353 @@ body,input {
   opacity: .5;
   cursor: pointer
 }
+
+.welcome {
+  display: flex;
+  padding: 48px 15%;
+  overflow: hidden
+}
+
+.welcome__section__image {
+  padding: 0 32px 0 0;
+  align-self: center
+}
+
+.welcome__section__image img {
+  width: 521px;
+  height: 509px
+}
+
+.welcome__section__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0 0 0 32px
+}
+
+.welcome__eyebrow {
+  font-weight: 500
+}
+
+.welcome__title {
+  font-size: 30px;
+  font-weight: 600
+}
+
+.welcome__subtitle {
+  font-size: 20px;
+  margin: 30px 0
+}
+
+.welcome__paragraph {
+  font-size: 18px;
+  line-height: 28px
+}
+
+.welcome__paragraph__letter {
+  font-size: 50px;
+  margin-right: 10px;
+  float: left;
+  line-height: .8
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin: 30px 0 0;
+  background-color: transparent;
+  background-image: var(--button-primary);
+  border-radius: 25px
+}
+
+.button__link {
+  display: flex;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  text-shadow: 0 0 0 rgb(0 0 0 / 30%);
+  padding: 15px 30px
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: .9
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px
+}
+
+.section-subtitle {
+  font-size: 20px
+}
+
+@media (max-width: 1512px) {
+  .hosts__section__card {
+      margin:0 5px
+  }
+
+  .latest__episodes {
+      flex-direction: column
+  }
+
+  .episode-card {
+      margin: 15px
+  }
+}
+
+@media (max-width: 1300px) {
+  .welcome__section__image img {
+      width:347px;
+      height: 339px
+  }
+
+  .newsletter__title {
+      font-size: 20px
+  }
+
+  .newsletter__subtitle {
+      font-size: 13px
+  }
+
+  .copyright {
+      padding: 16px 16px 32px
+  }
+}
+
+@media (max-width: 1060px) {
+  .introduction {
+      height:500px
+  }
+
+  .introduction__section {
+      padding-right: 130px
+  }
+
+  .introduction__section__title {
+      font-size: 50px
+  }
+
+  .introduction__section__subtitle {
+      font-size: 15px
+  }
+
+  .welcome__section__image {
+      display: none
+  }
+
+  .welcome__section__text {
+      align-items: center;
+      padding: 32px 16px;
+      gap: 10px
+  }
+
+  .hosts__section {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 50px
+  }
+
+  .newsletter {
+      flex-direction: column;
+      height: 130px;
+      justify-content: space-between
+  }
+
+  .newsletter__paragraph {
+      text-align: center
+  }
+
+  .newsletter__subtitle {
+      padding: 0
+  }
+
+  .newsletter__subscribe__input {
+      width: 270px
+  }
+
+  .copyright {
+      padding: 16px
+  }
+}
+
+@media (max-width: 900px) {
+  .introduction__section {
+      padding-right:0
+  }
+
+  .introduction__section__title {
+      font-size: 45px
+  }
+
+  .information {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px;
+      text-align: center;
+      line-height: 25px;
+      flex-direction: column;
+      align-items: center
+  }
+
+  .information__section {
+      align-items: center
+  }
+
+  .information__section__grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 100px;
+      line-height: 50px;
+      justify-items: center
+  }
+
+  .episode-line {
+      flex-direction: column;
+      text-align: center
+  }
+
+  .episode-line .episode-line__date,.episode-line .episode-line__genre,.episode-line .episode-line__more,.episode-line .episode-line__title {
+      display: flex;
+      margin: 10px 0
+  }
+
+  .copyright {
+      flex-direction: column;
+      line-height: 40px
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar__option {
+      display:none
+  }
+
+  .navbar__option--icon {
+      display: block
+  }
+
+  .introduction__section {
+      padding-right: 75px
+  }
+
+  .introduction__section__title {
+      font-size: 35px
+  }
+
+  .episode-card__info__title {
+      font-size: 18px
+  }
+
+  .episode-card__info__description {
+      font-size: 14px
+  }
+}
+
+@media (max-width: 550px) {
+  .introduction {
+      padding:0 10%
+  }
+
+  .introduction__section {
+      padding: 10px;
+      text-align: center
+  }
+
+  .introduction__section__subtitle {
+      margin: 30px 0 10px
+  }
+
+  .music-service {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 160px;
+      justify-content: space-between;
+      padding: 10px
+  }
+
+  .latest__section {
+      padding: 0 25px 25px
+  }
+
+  .episode-card {
+      flex-direction: column;
+      align-items: center
+  }
+
+  .episode-card__display {
+      height: 250px;
+      width: 250px
+  }
+
+  .episode-card__info,.newsletter__subtitle {
+      padding: 0
+  }
+
+  .episode-card__info__description,.episode-card__info__genre {
+      display: none
+  }
+
+  .episode-card__info__link,.episode-card__info__title {
+      text-align: center;
+      margin: 15px 0 5px
+  }
+
+  .music-service__link {
+      margin-right: 0
+  }
+
+  .donate {
+      margin: 25px 0
+  }
+
+  .donate__description {
+      padding: 5%
+  }
+
+  .donate__title {
+      font-size: 45px
+  }
+
+  .donate__subtitle {
+      font-size: 20px
+  }
+
+  .all-episodes {
+      padding: 0 10% 20px
+  }
+
+  .hosts__section {
+      grid-template-columns: none
+  }
+
+  .newsletter {
+      height: 160px
+  }
+
+  .newsletter__subscribe__input {
+      width: 200px
+  }
+
+  .newsletter__subscribe__button {
+      padding: 0 10px;
+      font-size: 10px
+  }
+
+  .copyright {
+      font-size: 10px
+  }
+}
+
+@media (max-width: 400px) {
+  .welcome {
+      padding:5%
+  }
+}

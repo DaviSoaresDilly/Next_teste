@@ -1,22 +1,26 @@
 'use client';
 
+import Link from "next/link";
 import React from "react";
-import LinkComponents from "../core/link";
 
-export default function NavBar() {
-  function menu(): void {
-    throw new Error("Function not implemented.");
-  }
+interface NavBarProps {
+  links: { path: string; label: string, className?: string, onClick?: () => void }[];
+  onclick?: () => void;
+};
 
+const NavBar: React.ForwardRefRenderFunction<unknown, NavBarProps> = ({ links, onclick }) => {
   return (
     <nav id="navbar" className="navbar">
-      <LinkComponents href="/" className="navbar__option" alt={"ir para pagina inicial"}>Home</LinkComponents>
-      <LinkComponents href="/sobre" className="navbar__option" alt={"ir para pagina sobre"}>Sobre</LinkComponents>
-      <LinkComponents href="/contato" className="navbar__option" alt={"ir para a pagina contato"}>Contato</LinkComponents>
-
-      <div className="navbar__option navbar__option--icon" onClick={() => menu()}>
+      {links.map((link) => (
+        <Link key={link.path} href={link.path} passHref legacyBehavior>
+          <a className="navbar__option" >{link.label}</a>
+        </Link>
+      ))}
+      <div className="navbar__option navbar__option--icon" onClick={onclick}>
         <i className="fa fa-bars"></i>
       </div>
     </nav>
   );
-}
+};
+
+export default React.forwardRef(NavBar); 

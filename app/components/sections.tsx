@@ -1,22 +1,25 @@
-/* eslint-disable react/no-children-prop */
 import React from "react";
-import LinkComponent from "../core/link";
 
 interface SectionProps {
-  title: React.ReactNode;
-  subtitle: string;
+  titles: React.ReactNode[];
+  subtitle?: string;
   className?: string;
   children?: React.ReactNode;
-}
+  id?: string;
+  role?: string;
+  ariaLabel?: string;
+};
 
-export default function Section({ title, subtitle, className }: SectionProps) {
+export default function Section({ titles, subtitle, className, children, ...rest }: SectionProps) {
   return (
-    <section className={className}>
-      <div className={className+"__section"}>
-        <h1 className={className+"__section__title"}>{title}</h1>
-        <h2 className={className+"__section__subtitle"}>{subtitle}</h2>
-        
+    <section {...rest} className={className}>
+      <div className={`${className}__section`}>
+        {titles.map((title: React.ReactNode, index: number) => (
+          <h1 key={index} className={`${className}__section__title`}>{title}</h1>
+        ))}
+        {subtitle && <h2 className={`${className}__section__subtitle`}>{subtitle}</h2>}
       </div>
+      {children}
     </section>
   );
-}
+};
