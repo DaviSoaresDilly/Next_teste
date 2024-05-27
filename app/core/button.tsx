@@ -3,7 +3,8 @@ import Image from "next/image";
 
 interface ButtonProps {
   text: string; 
-  onClick: () => void;
+  onClick?: () => void;
+  url?: string;
   className?: string;
   disabled?: boolean; 
   id?: string; 
@@ -12,12 +13,17 @@ interface ButtonProps {
   imageSrc?: string;
 };
 
-export default function Button({text, onClick, className, disabled, id, type, ariaLabel, imageSrc}: ButtonProps) {
+export default function Button({text, url, onClick, className, disabled, id, type, ariaLabel, imageSrc}: ButtonProps) {
+  
+  const handleClick = () => {
+    window.open(url)
+  }
+  
   return (
     <button
       id={id}
       className={`btn ${className}`}
-      onClick={onClick}
+      onClick={handleClick}
       disabled={disabled}
       type={type}
       aria-label={ariaLabel}

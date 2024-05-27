@@ -2,7 +2,9 @@ import NavBar from "./components/navbar";
 import Image from "next/image";
 import Section from "./components/sections";
 import React from "react";
-import LinkList from "./core/linkList";
+import { LinkList } from "./core/link";
+import { LinkUnic } from "./core/link";
+import Button from "./core/button";
 
 export default function Home() {
 
@@ -38,9 +40,9 @@ export default function Home() {
       <div className="main-container">
         <Section 
 
-          titles={["Códigos de Carreira", "Podcast"]}
-          subtitle={"Um podcast com insights capazes de transformar sua jornada profissional"}
-          className="introduction"
+          titles = {["Códigos de Carreira", "Podcast"]}
+          subtitle = {"Um podcast com insights capazes de transformar sua jornada profissional"}
+          className = "introduction"
 
         >
 
@@ -49,6 +51,15 @@ export default function Home() {
             
 
           ]}/>
+
+          <Button 
+            text="Ouvir no Spotify"
+            url="https://open.spotify.com/show/5Z9Z6"
+            className="btn--cta"
+            ariaLabel="Ouvir no Spotify"
+            imageSrc="/assets/images/spotify.svg" 
+                    
+          />
 
         </Section>
 
