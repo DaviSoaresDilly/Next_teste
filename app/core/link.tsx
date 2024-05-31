@@ -9,9 +9,9 @@ const LinkList: React.ForwardRefRenderFunction<unknown, LinkListProps> = ({ link
   return (
     <ul>
       {links.map((link) => (
-        <li key={link.path}>
-          <Link href={link.path} passHref>
-            <a className="navbar__option" >{link.label}</a>
+        <li key = {link.path}>
+          <Link href = {link.path} passHref>
+            <a className = {link.className} >{link.label}</a>
           </Link>
         </li>
       ))}
@@ -23,8 +23,8 @@ const LinkUnic: React.ForwardRefRenderFunction<unknown, LinkListProps> = ({ link
   return (
     <>
       {links.map((link) => (
-        <Link key={link.path} href={link.path} passHref>
-          <a className="navbar__option" >{link.label}</a>
+        <Link key = {link.path} href = {link.path} passHref>
+          <a className = {link.className} >{link.label}</a>
         </Link>
       ))}
     </>

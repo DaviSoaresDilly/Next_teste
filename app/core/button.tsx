@@ -1,34 +1,32 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ButtonProps {
-  text: string; 
-  onClick?: () => void;
-  url?: string;
+  text?: string; 
+  href: string;
   className?: string;
   disabled?: boolean; 
   id?: string; 
   type?: "button" | "submit" | "reset"; 
   ariaLabel?: string;
   imageSrc?: string;
+  button__link?: string;
+  width: number;
+  height: number;
 };
 
-export default function Button({text, url, onClick, className, disabled, id, type, ariaLabel, imageSrc}: ButtonProps) {
-  
-  const handleClick = () => {
-    window.open(url)
-  }
+export default function Button({text, className, disabled, id, type, ariaLabel, button__link, href, imageSrc, width, height}: ButtonProps) {
   
   return (
     <button
-      id={id}
-      className={`btn ${className}`}
-      onClick={handleClick}
-      disabled={disabled}
-      type={type}
-      aria-label={ariaLabel}
+      id = {id}
+      className = {className}
+      disabled = {disabled}
+      type = {type}
     >
-      {imageSrc ? <Image src={imageSrc} alt={ariaLabel || 'button image'} /> : text}
+      {button__link ? <Link href = {href}><a className = {`${className}__link`}>{text}</a></Link> : text}
+      {imageSrc && <Image src = {imageSrc} className = {`${className}__image`} alt = {ariaLabel || 'button image'} width={width} height={height} />}
     </button>
   );
 };
