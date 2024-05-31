@@ -32,7 +32,7 @@ export default function Home() {
           { path: "#contato", label: "Contato" },
           { path: "https://anchor.fm/codigosdecarreira", label: "Ouvir", className: "navbar__option--cta"}
         ]}
-        onclick={menu} 
+        //onclick={menu} 
       />
       
 
