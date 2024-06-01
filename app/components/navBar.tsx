@@ -1,21 +1,24 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 
 interface NavBarProps {
   links: { path: string; label: string, className?: string }[];
-  onclick?: () => void;
+  onClickHandler?: () => void;
+  customClass?: string;
 };
 
-const NavBar: React.ForwardRefRenderFunction<unknown, NavBarProps> = ({ links, onclick }) => {
+const NavBar: React.ForwardRefRenderFunction<unknown, NavBarProps> = ({ links, onClickHandler, customClass="" }) => {
   return (
-    <nav id="navbar" className="navbar">
+      <nav id="navbar" className={customClass}>
       {links.map((link) => (
-        <Link key = {link.path} href = {link.path} passHref legacyBehavior>
-          <a className = "navbar__option" >{link.label}</a>
+        <Link key={link.path} href={link.path} passHref legacyBehavior>
+          <a className="navbar__option" >{link.label}</a>
         </Link>
       ))}
-      <div className = "navbar__option navbar__option--icon" onClick = {onclick}>
-        <i className = "fa fa-bars"></i>
+      <div className="navbar__option navbar__option--icon" onClick={onClickHandler}>
+        <i className="fa fa-bars"></i>
       </div>
     </nav>
   );
