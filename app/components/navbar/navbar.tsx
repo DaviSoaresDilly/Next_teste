@@ -7,6 +7,7 @@ interface NavBarProps {
   links: { path: string; label: string; className?: string }[];
   onClickHandler?: () => void;
   customClass?: string;
+  className?: string;
 }
 
 const NavBar: React.ForwardRefRenderFunction<unknown, NavBarProps> = ({
@@ -18,7 +19,7 @@ const NavBar: React.ForwardRefRenderFunction<unknown, NavBarProps> = ({
     <nav id="navbar" className={customClass}>
       {links.map((link) => (
         <Link key={link.path} href={link.path} passHref legacyBehavior>
-          <a className="navbar__option">{link.label}</a>
+          <a className="navbar__option ">{link.label}</a>
         </Link>
       ))}
       <div
